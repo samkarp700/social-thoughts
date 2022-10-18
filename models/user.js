@@ -15,6 +15,7 @@ const UserSchema = new Schema(
         required: true, 
         unique: true, 
         //set up matching validation
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,"Please fill a valid email address",]
     }, 
     userThoughts: [
         {
