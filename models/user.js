@@ -1,5 +1,5 @@
 //user model 
-const { Schema, model, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 
 const UserSchema = new Schema(
@@ -44,7 +44,7 @@ const User = model('User', UserSchema);
 //get total count of friends upon retrieval 
 UserSchema.virtual('friendCount').get(function() {
     //reduce method
-    return this.friends.reduce((total, friends) => total + friends.length + 1, 0);
+    return this.friends.length;
 });
 
 //export
