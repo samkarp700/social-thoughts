@@ -16,19 +16,19 @@ const {
 router  
     .route('/')
     .get(getAllUsers)
-    .post(createUser)
+    .post(createUser);
 
  //single user / by id 
  router
     .route('/:id')
     .get(getUser)
     .put(updateUser)
-    .delete(deleteUser)
+    .delete(deleteUser);
     
 // post / delete user friends
 router
     .route('/:id/friends/:friendId')
     .post(addFriend)
-    .delete(deleteFriend)
+    .delete(deleteFriend);
 
     module.exports = router;
