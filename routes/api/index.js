@@ -1,11 +1,10 @@
 // api routes and endpoint names
-
 const router = require('express').Router();
-const userRoutes = require('./user-routes').Router();
-const reactionRoutes = require('./thought-routes').Router();
+const userRoutes = require('./user-routes');
+const thoughtRoutes = require('./thought-routes');
 
 //prefix of /users
 router.use('/users', userRoutes);
-router.use('/thoughts', reactionRoutes);
+router.use('/thoughts', thoughtRoutes);
 
 module.exports = router;
