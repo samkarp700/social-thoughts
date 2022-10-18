@@ -42,12 +42,12 @@ const ThoughtSchema = new Schema(
             default: Date.now, 
             //date format 
         }, 
-        username: {
+        userName: {
             type: String, 
             required: true
         }, 
         //reactionSchema
-        replies: [ReactionSchema]
+        reactions: [ReactionSchema]
         
     }, 
     {
