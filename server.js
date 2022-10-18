@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 
 //mongoose database connect
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/databasename', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialthoughts', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
