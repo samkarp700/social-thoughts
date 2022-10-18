@@ -1,6 +1,6 @@
 //user model 
 const { Schema, model } = require('mongoose');
-//date format if added 
+
 
 const UserSchema = new Schema({
     userName: {
@@ -15,17 +15,23 @@ const UserSchema = new Schema({
         unique: true, 
         //set up matching validation
     }, 
-    userThoughts: {
-        // array of id values referencing thought model
-    }, 
-    userFriends: {
-        //array of id values referencing user model - self reference
-    }
+    userThoughts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'
+        }
+    ],
+
+    userFriends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
 }, 
 {
     toJSON: {
-        getters: true, 
-        getters: true
+        virtuals: true
     }, 
     id: false
 }
